@@ -9,4 +9,5 @@ This repository contains examples on how to use ContainerSSH in certain scenario
 
 | Example | Description |
 |---------|-------------|
-| [Quick start](/quick-start) | A simple docker-compose example on how to get ContainerSSH running. |
+| [Quick start](quick-start/) | A simple docker-compose example on how to get ContainerSSH running. |
+| [Logging to the ELK stack with Docker and Fluentd](logging-elk-stack/) | An example how to get ContainerSSH logs to an ELK stack when running inside Docker |
