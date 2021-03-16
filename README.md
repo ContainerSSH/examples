@@ -5,7 +5,7 @@
 
 This repository contains examples on how to use ContainerSSH in certain scenarios. Feel free to use these to build your own ContainerSSH setup.
 
-⚠️⚠️⚠️ These examples are not production-ready! Please read the [ContainerSSH documentation](https://containerssh.io). ⚠️⚠️⚠️
+<center><strong>⚠️⚠️⚠️ These examples are not production-ready! Please read the [ContainerSSH documentation](https://containerssh.io). ⚠️⚠️⚠️</strong></center>
 
 | Example | Description |
 |---------|-------------|
