@@ -5,6 +5,8 @@
 
 This repository contains examples on how to use ContainerSSH in certain scenarios. Feel free to use these to build your own ContainerSSH setup.
 
-⚠️⚠️⚠️ These examples are not production-ready! Please read the [ContainerSSH documentation](https://containerssh.io) for full guides. ⚠️⚠️⚠️
+⚠️⚠️⚠️ These examples are not production-ready! Please read the [ContainerSSH documentation](https://containerssh.io). ⚠️⚠️⚠️
 
+| Example | Description |
+|---------|-------------|
 | [Quick start](/quick-start) | A simple docker-compose example on how to get ContainerSSH running. |
