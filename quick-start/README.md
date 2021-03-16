@@ -2,7 +2,7 @@
 
 This is a quick start guide to get a test server up and running in less than 5 minutes with [docker-compose](https://docs.docker.com/compose/).
 
-<center><strong>⚠️⚠️⚠️ This example is not production-ready! Please read the <a href="https://containerssh.io">ContainerSSH documentation</a>. ⚠️⚠️⚠️</strong></center>
+<center><strong>⚠️⚠️⚠️ This example is not production-ready! Please read the <a href="https://containerssh.io">ContainerSSH documentation</a>. ⚠️⚠️⚠️</strong></center><br />
 
 **⚠️ Warning:** This setup will let any password authenticate. Only use it for testing.
 
