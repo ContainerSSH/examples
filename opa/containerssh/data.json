@@ -1,0 +1,7 @@
+{
+    "defaultImage": "busybox",
+    "users": [
+      {"name": "joe", "pw": "YWJj", "image": "otherimage"},
+      {"name": "bob", "pw": "def"}
+    ]
+}
