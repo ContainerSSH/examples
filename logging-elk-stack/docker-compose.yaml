@@ -1,0 +1,45 @@
+# This file is provided as a quick way to deploy ContainerSSH for
+# testing purposes. It should not be used for production.
+#
+# Please see the ContainerSSH reference manual for a detailed guide:
+# https://containerssh.io/reference/
+---
+version: '3.2'
+services:
+  containerssh:
+    build: .
+    ports:
+      - 127.0.0.1:2222:2222
+    volumes:
+    - type: bind
+      source: ./config.yaml
+      target: /etc/containerssh/config.yaml
+    - type: bind
+      source: ./ssh_host_rsa_key
+      target: /var/secrets/ssh_host_rsa_key
+    - type: bind
+      source: /var/run/docker.sock
+      target: /var/run/docker.sock
+    logging:
+      driver: fluentd
+      options:
+        "fluentd-address": "127.0.0.1:24224"
+        "tag": "containerssh.{{.ID}}"
+  authconfig:
+    image: containerssh/containerssh-test-authconfig:0.4.0-PR4
+  fluentd:
+    build: ./fluentd
+    volumes:
+      - ./fluentd/conf:/fluentd/etc
+    ports:
+      - "127.0.0.1:24224:24224"
+      - "127.0.0.1:24224:24224/udp"
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
+    container_name: elasticsearch
+    environment:
+      - "discovery.type=single-node"
+  kibana:
+    image: kibana:7.10.1
+    ports:
+      - "127.0.0.1:5601:5601"
