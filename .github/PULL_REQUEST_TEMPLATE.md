@@ -9,7 +9,7 @@ assignees: janoszen
 
 ...
 
-## Are you the owner of the code you are sending in, or do you have permission of the owner?
+## Are you the owner of the code or do you have permission of the owner?
 
 ...
 
