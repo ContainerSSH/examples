@@ -12,7 +12,7 @@ To run this quick start please make sure you have a working [Docker environment]
 
 ## Step 2: Download the sample files
 
-Please download the contents of the [example directory](https://github.com/containerssh/containerssh/tree/main/example) from the source code repository.
+Please download the contents of the [example directory](https://github.com/ContainerSSH/examples/tree/main/quick-start) from the source code repository.
 
 ## Step 3: Launch ContainerSSH
 
@@ -36,6 +36,6 @@ docker image rm containerssh/containerssh-guest-image
 
 ## Step 6: Making it productive
 
-The authentication and configuration server included in the example is a dummy server and lets any password in. To actually use ContainerSSH, you will have to write [your own authentication server](authserver.md). We recommend reading the [architecture overview](architecture.md) before proceeding.
+The authentication and configuration server included in the example is a dummy server and lets any password in. To actually use ContainerSSH, you will have to write [your own authentication server](https://containerssh.io/getting-started/authserver/). We recommend reading the [architecture overview](https://containerssh.io/getting-started/architecture/) before proceeding.
 
 **👉 Tip:** You can pass the `CONTAINERSSH_ALLOW_ALL` environment variable to the demo auth-config server to build a honeypot.
