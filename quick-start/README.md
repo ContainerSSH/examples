@@ -6,9 +6,11 @@ This is a quick start guide to get a test server up and running in less than 5 m
 
 **⚠️ Warning:** This setup will let any password authenticate. Only use it for testing.
 
-## Step 1: Set up a Dockerized environment
+## Step 1: Set up a Dockerized or Kubernetes environment
 
 To run this quick start please make sure you have a working [Docker environment](https://docs.docker.com/get-docker/) and a working [docker-compose](https://docs.docker.com/compose/).
+
+Alternatively, you can also set up a Kubernetes cluster. We recommend setting up [Docker Desktop](https://www.docker.com/products/docker-desktop), [k3s](https://k3s.io/), or [Kubernetes in Docker](https://kind.sigs.k8s.io/).
 
 ## Step 2: Download the sample files
 
@@ -16,7 +18,9 @@ Please download the contents of the [example directory](https://github.com/Conta
 
 ## Step 3: Launch ContainerSSH
 
-In the downloaded directory run `docker-compose build` and then `docker-compose up -d`. This is you server.
+For a Docker environment run `docker-compose up -d` in the downloaded `quick-start` (this) directory.
+
+For a Kubernetes environment run `kubectl apply -f kubernetes.yaml` in the `quick-start` (this) directory.
 
 ## Step 4: Logging in
 
@@ -26,13 +30,7 @@ Alternatively you can also try the user `busybox` to land in a Busybox container
 
 ## Step 5: Cleaning up
 
-Once you're done, you can shut down the server using the `docker-compose down`, then remove the images using `docker-compose rm`.
-
-Finally, you can also remove the guest image:
-
-```
-docker image rm containerssh/containerssh-guest-image
-```
+Once you're done, you can shut down the server using the `docker-compose down`, then remove the images using `docker-compose rm` and remove the guest image by running `docker image rm containerssh/containerssh-guest-imag` for a Docker environment, or `kubectl delete -f kubernetes.yaml` for the Kubernetes environment.
 
 ## Step 6: Making it productive
 
