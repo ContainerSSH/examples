@@ -1,10 +1,14 @@
 ---
 ssh:
+  banner: "Welcome to ContainerSSH!\n"
   hostkeys:
     - /var/secrets/ssh_host_rsa_key
+log:
+  level: debug
 auth:
   url: "http://authconfig:8080"
 configserver:
   url: "http://authconfig:8080/config"
-dockerrun:
+backend: docker
+docker:
   host: unix:///var/run/docker.sock

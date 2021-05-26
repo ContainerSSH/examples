@@ -7,10 +7,11 @@
 version: '3.2'
 services:
   containerssh:
-    image: containerssh/containerssh:0.4.0
+    image: containerssh/containerssh:0.4.1
     ports:
         # For security we only allow this demo to run on localhost.
       - 127.0.0.1:2222:2222
+
     volumes:
 
       # Mount the ContainerSSH config.
@@ -31,10 +32,11 @@ services:
     - type: bind
       source: /var/run/docker.sock
       target: /var/run/docker.sock
+
     # We are changing the user back to root so we can access the Docker socket.
     # We don't recommend using this setting in production. Please take a look
     # at https://containerssh.io/reference/dockerrun/ for hardened settings.
     user: "root"
   authconfig:
     # The test-authconfig server lets in the "foo" user with the "bar" password.
-    image: containerssh/containerssh-test-authconfig:0.4.0
+    image: containerssh/containerssh-test-authconfig:0.4.1

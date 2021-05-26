@@ -29,7 +29,7 @@ services:
       - fluentd
       - authconfig
   authconfig:
-    image: containerssh/containerssh-test-authconfig:0.4.0
+    image: containerssh/containerssh-test-authconfig:0.4.1
   fluentd:
     build: ./fluentd
     volumes:

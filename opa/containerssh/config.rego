@@ -7,7 +7,7 @@ image(user) = i {
 } else = data.defaultImage
 
 config = {
-  "kuberun": {
+  "kubernetes": {
     "pod": {
       "podSpec": {
         "containers": [
