@@ -11,4 +11,5 @@ configserver:
   url: "http://authconfig:8080/config"
 backend: docker
 docker:
-  host: unix:///var/run/docker.sock
+  connection:
+    host: unix:///var/run/docker.sock
