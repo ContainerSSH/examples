@@ -141,7 +141,7 @@ spec:
       containers:
         # Run ContainerSSH
         - name: containerssh
-          image: containerssh/containerssh:0.4
+          image: containerssh/containerssh:v0.5.0
           securityContext:
             # Read only container
             readOnlyRootFilesystem: true
@@ -160,7 +160,7 @@ spec:
               readOnly: true
         # Run the auth-config test server for authentication
         - name: containerssh-authconfig
-          image: containerssh/containerssh-test-authconfig:0.4
+          image: containerssh/containerssh-test-authconfig:v0.5.0
           securityContext:
             readOnlyRootFilesystem: true
       # Don't allow containers running as root (ContainerSSH doesn't need it)

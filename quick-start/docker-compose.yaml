@@ -4,10 +4,10 @@
 # Please see the ContainerSSH reference manual for a detailed guide:
 # https://containerssh.io/reference/
 ---
-version: '3.2'
+version: '3'
 services:
   containerssh:
-    image: containerssh/containerssh:0.4.1
+    image: containerssh/containerssh:v0.5.0
     ports:
         # For security we only allow this demo to run on localhost.
       - 127.0.0.1:2222:2222
@@ -39,4 +39,4 @@ services:
     user: "root"
   authconfig:
     # The test-authconfig server lets in the "foo" user with the "bar" password.
-    image: containerssh/containerssh-test-authconfig:0.4.1
+    image: containerssh/containerssh-test-authconfig:v0.5.0
