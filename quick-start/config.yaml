@@ -3,6 +3,8 @@ ssh:
   banner: "Welcome to ContainerSSH!\n"
   hostkeys:
     - /var/secrets/ssh_host_rsa_key
+    - /var/secrets/ssh_host_ecdsa_key
+    - /var/secrets/ssh_host_ed25519_key
 log:
   level: debug
 auth:

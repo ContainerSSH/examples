@@ -38,7 +38,9 @@ data:
     ssh:
       hostkeys:
         # This points to the host key we will create in the next step.
-        - /etc/containerssh/host.key
+        - /etc/containerssh/ssh_host_rsa_key
+        - /etc/containerssh/ssh_host_ed25519_key
+        - /etc/containerssh/ssh_host_ecdsa_key
     auth:
       # The authentication server will be running in the same pod, so we use 127.0.0.1
       url: http://127.0.0.1:8080
@@ -76,8 +78,12 @@ metadata:
   name: containerssh-hostkey
   namespace: containerssh
 data:
-  host.key: |
-    LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBeFhJVGFXR25FY2UvN2M2RzQwR3Iya3JkOGVJWGJZSzJ4ZWVXN1d4TDczd2hrdFloCmw1YWRSS0ZxeEJtYmFKcjhBdGtSZTRFZk9pNEpOdzB3aGE3amQ2YUdwWHFPb0VUTEtTUmZLTWYyUmwvT3BKQkIKdkFycWlPRFZqc2pqUStwM24wWDF1cTNOaEhvR3l3OXNDS1cwRXgvRnRWVjN2R29VTTNoWGdxcTZjUmhuaEprYgo0dEtOWkdvekVTc1l5a08wUEtvSHRnejkrRnU3dFhjbTExQkN4TEFGMGxOSU43emFzY0hqT0xVRTBLOGhEMFROCjlERkJQa3hvemNwQWNWSzMwQmttYlN6eW1EbjdpSDJrTTFNL0JpZThQT0ZQaXZDbmI0N2JkaEs5ZDk1Z2V5UkUKTTRoNE1pcDhhamFuU3IwUXRJSUUxV3Z1aFB5TkJQWVByRS90V3dJREFRQUJBb0lCQVFDQ2g1M3BweE5LSCtIMApsdnA1dHVxano2Yld4Lzl3K0Y5WWluZ3UwYytKcldpTXFGOWcxY04yb2JmeG1IUXpQWEtwZDFPbGNJRnlkd2pFCmlrV3Z1eVRKN3g5SXVyTWJwUjhpUGRkaklIN2htMmtEUmhNTys3QjllUlgxNVR6Sm8zSWRxNlIrRzNTb3hmdEQKdHhoV3h5VTdGMkFmTnplSEtpSGN2UXd0YUMwRm9sQ1BCUnJWbms2ZDkxRERUOFV2a1c1ZGkzczlvcC9BTUFTbAoxRExXRHloK0ErdzViVEFWQzJYc0xmd1ZlSXlGdXpMVzNUTkNaWmNGamNvcktVMmQ3ZjFtd1pSbktEaWVBUWp3Ck9rQ2xIM0xxRnN2OHNvbDQ1Sk9zMTFWNUFpVXpFaUJpWnZ1UWtiaTcyWXVHMGh6NHFNR0plYXA0K0VXZFZFWHoKMzU2VWZhK1JBb0dCQVBIWHZkemFuM3l4ODFqT1NqUzNVd2ZURU0xTlB1SldQVmZEV0RNSEx4TTNPUDVDc2IyTApXSHdWSDg2WU8xdC9UR0pkbXJDTzJ1NWNOL0srR3MxWjJSYkdSM2U3M2NkOStYZjl3WmpBaVBWTlRKQVRUR25PCmE2SkhaaEgzaUFlRmU4dkx6SUxCeTVBd1UxdUsvM2graVRBVldZdTNiTHZWZC9JTzNYWWdZMGsvQW9HQkFORUEKLzRuTDNXOWdXNFBCR01qQmo5MnBYYllQVmlRNFA0VjhBMUhGZ1g2Q2FjcnJCN2U3VWd3Q3hYWFQrOFZWMUtrKwp2WDZlcnBSVk5qK3NDMVpEQmtXT09pRWd1RWtMNVZ4Y0hxZlg1akJJTU44cDBKd1IrSWdlM1duNDdNZ3ZpRDc3CmJVWjVxT2RQLzdhR2J3VnJvZkdCNUNJc1JKTU1BMmo4Rnd5TmZwamxBb0dBRTZadzhkbjlyWGNVQzdvdlExdEYKN3RQU2dLdnZHUnJpdnhmTE9kSXluQUFYckdrazRmN0pnTU9Db3hteGNQekY2eFFwOW9DVS8xc1UzSzlmcENIUgp4c3p6ajZIL0lpOTFMcSs2cER1NHBSM1R3NzBkcjFjclhiTXBjdnBHM2oyVlVuakx0REFrNXlGV0ZKRVZzdWV0CkkvQUlKNWNPeWJCTm42aGZqREtUZnFjQ2dZRUFzbnNsdmVqb2VwcFF6Rnp6NjB6UXJMeGJtSVBVVGkzeW9PMWMKY0ZJMzJXOUpKTTQ4MHZ3V2ZzZEhGTzRvVFVhVXlzc1hTNi82NmhVeXRJRVpWVnI3V2g2eEtXVWx1c3Q3M0xtVwpQRU0xQWZwRU1lOGxoSUljT1RJU1p0TDZjYUdWdWlOQUdEVUF0amdzNlJRNGJ1cVJhd28vWmFka0VDYnNLcFZNCm9aMmJoTGtDZ1lBV1ZKU29tSW5XOXJ3eDF0bU1rODhXcVBYMGVJTllYK05PRE1EbjJrMlhTVzc5dVBsQUlqM3EKSkF0dXZsdmtlYm04NXlCUHllSEZiSkZTdlM2bzJIdmt5WGVnTjFZTWJjL1BmaFlKZmNQL2NlSTRkOGRFZndNWQpScDQyM2dqNFZsdnVac25PTGhJWEtlaVpVQnp3MXk0U1R0eWF2Tk1ieGU2WnZMSzNGeGxnTXc9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQ==
+  ssh_host_rsa_key: |
+    @@SSH_HOST_RSA_KEY@@
+  ssh_host_ed25519_key: |
+    @@SSH_HOST_ED25519_KEY@@
+  ssh_host_ecdsa_key: |
+    @@SSH_HOST_ECDSA_KEY@@
 ---
 # We are creating a new service account that can be used to launch new containers.
 apiVersion: v1
@@ -148,10 +154,18 @@ spec:
           ports:
             - containerPort: 2222
           volumeMounts:
-              # Mount the host key
+              # Mount the host keys
             - name: hostkey
-              mountPath: /etc/containerssh/host.key
-              subPath: host.key
+              mountPath: /etc/containerssh/ssh_host_rsa_key
+              subPath: ssh_host_rsa_key
+              readOnly: true
+            - name: hostkey
+              mountPath: /etc/containerssh/ssh_host_ed25519_key
+              subPath: ssh_host_ed25519_key
+              readOnly: true
+            - name: hostkey
+              mountPath: /etc/containerssh/ssh_host_ecdsa_key
+              subPath: ssh_host_ecdsa_key
               readOnly: true
               # Mount the config file
             - name: config

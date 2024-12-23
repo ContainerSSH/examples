@@ -24,6 +24,12 @@ services:
     - type: bind
       source: ./ssh_host_rsa_key
       target: /var/secrets/ssh_host_rsa_key
+    - type: bind
+      source: ./ssh_host_ecdsa_key
+      target: /var/secrets/ssh_host_ecda_key
+    - type: bind
+      source: ./ssh_host_ed25519_key
+      target: /var/secrets/ssh_host_ed25519_key
 
       # We are mounting the Docker socket so ContainerSSH can start containers.
       # This is not recommended for production, instead you should set up
