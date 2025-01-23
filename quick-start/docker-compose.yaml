@@ -26,7 +26,7 @@ services:
       target: /var/secrets/ssh_host_rsa_key
     - type: bind
       source: ./ssh_host_ecdsa_key
-      target: /var/secrets/ssh_host_ecda_key
+      target: /var/secrets/ssh_host_ecdsa_key
     - type: bind
       source: ./ssh_host_ed25519_key
       target: /var/secrets/ssh_host_ed25519_key
