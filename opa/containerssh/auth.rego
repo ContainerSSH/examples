@@ -2,7 +2,7 @@ package containerssh.auth
 
 default success = false
 
-success = true {
+success if {
     u := input.username
     p := input.passwordBase64
     record := data.users[_]

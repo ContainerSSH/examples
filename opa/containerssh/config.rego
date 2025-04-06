@@ -1,9 +1,9 @@
 package containerssh.config
 
-image(user) = i {
+image(user) = i if {
     record := data.users[_]
     record.name == user
-    i := record.image
+    i = record.image
 } else = data.defaultImage
 
 config = {
